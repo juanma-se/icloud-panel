@@ -1,0 +1,29 @@
+<app-widgets-dropdown />
+
+<c-container class="pt-4 c-container fluid">
+  <c-row class="justify-content-center">
+
+    <c-col xs="12" lg="9">
+      <c-card class="mb-4">
+        <c-card-header>
+          Documentos aprovados por mes
+        </c-card-header>
+        <c-card-body>
+          <c-chart type="line" [data]="chartLineData" [options]="options" />
+        </c-card-body>
+      </c-card>
+    </c-col>
+
+    <c-col xs="12" lg="9">
+      <c-card class="mb-4">
+        <c-card-header>
+          Relevancia de documentos
+        </c-card-header>
+        <c-card-body>
+          <c-chart type="doughnut" [data]="chartDoughnutData" [options]="options" />
+        </c-card-body>
+      </c-card>
+    </c-col>
+
+  </c-row>
+</c-container>

@@ -1,0 +1,62 @@
+<div class="bg-light dark:bg-transparent d-flex flex-row align-items-center">
+    <c-container breakpoint="md">
+
+      <c-alert color="warning">Atención: Funcionalidad NO implementada
+      </c-alert>
+
+      <c-row class="justify-content-center">
+        <c-col lg="10" xl="8">
+          <c-card-group>
+            <c-card class="p-4">
+              <c-card-body>
+                <form cFormFloating #form="ngForm" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+                  <h1 class="mb-3">Editar Usuario</h1>
+
+                  <!--Rol del usuario-->
+                  <c-input-group class="mb-3">
+                    <div [cFormFloating]="true">
+                      <input cFormControl id="role" placeholder="Rol" type="text" formControlName="role" readonly />
+                      <label cLabel for="role">Rol del usuario</label>
+                    </div>
+                  </c-input-group>
+
+                  <!--Nombre-->
+                  <c-input-group class="mb-3">
+                    <div [cFormFloating]="true">
+                      <input cFormControl id="name" placeholder="Nombre" type="text" formControlName="name" required />
+                      <label cLabel for="name">Nombre</label>
+                    </div>
+                    <div class="mb-4 text-sm" *ngIf="eventForm.errors?.['nombre']">
+                      <span class="text-danger">El nombre es requerido</span>
+                    </div>
+                  </c-input-group>
+  
+                  <!--Email-->
+                  <c-input-group class="mb-3">
+                    <div [cFormFloating]="true">
+                      <input cFormControl id="email" placeholder="Email" type="email" formControlName="email" required />
+                      <label cLabel for="email">Email</label>
+                    </div>
+                    <div class="mb-4 text-sm" *ngIf="eventForm.errors?.['email']">
+                      <span class="text-danger">El email es requerido</span>
+                    </div>
+                  </c-input-group>
+  
+                  <!--Boton crear-->
+                  <c-row>
+                    <c-col xs="6">
+                      <button cButton type="submit" [disabled]="eventForm.invalid" class="px-4 text-white" color="success">
+                        Actualizar usuario
+                      </button>
+                    </c-col>
+                  </c-row>
+  
+                </form>
+              </c-card-body>
+            </c-card>
+          </c-card-group>
+        </c-col>
+  
+      </c-row>
+    </c-container>
+  </div>

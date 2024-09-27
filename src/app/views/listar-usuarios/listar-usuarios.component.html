@@ -1,0 +1,29 @@
+<c-container fluid>
+	
+	<!-- Datatables-->
+	<c-row>
+		<ng-template #buttonRef let-data="adtData" let-emitter="captureEvents">
+			<app-button-template-ref 
+				[data]="data" 
+				[actions]="[
+					{ label: 'Editar', action: 'edit', cssClass: 'btn btn-sm btn-warning mx-1' },
+					{ label: 'Borrar', action: 'delete', cssClass: 'btn btn-sm btn-danger mx-1' },
+				]" 
+				(emitter)="emitter($event)">
+			</app-button-template-ref>
+		</ng-template>
+
+		<c-col>
+
+			<c-card class="mb-3">
+				<c-card-header ngPreserveWhitespaces>
+					<strong>Listado de usuarios de la aplicación</strong>
+				</c-card-header>
+				<c-card-body>
+					<table id="first-table" datatable [dtTrigger]="dtTrigger" [dtOptions]="dtOptionsUsuarios" class="row-border hover table-striped table"></table>
+				</c-card-body>
+			</c-card>
+
+		</c-col>
+	</c-row>
+</c-container>

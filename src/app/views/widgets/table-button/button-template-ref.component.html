@@ -1,0 +1,9 @@
+<div class="btn-group d-flex text-center">
+  <button 
+    *ngFor="let action of actions" 
+    (click)="onAction(action.action)"
+    [ngClass]="action.cssClass"
+  >
+    {{ action.label }}
+  </button>
+</div>

@@ -1,0 +1,105 @@
+<div class="bg-light dark:bg-transparent min-vh-100 d-flex flex-row align-items-center">
+  <c-container breakpoint="md">
+    <c-row class="justify-content-center">
+
+      <c-col lg="6" xl="4" class="py-2">
+        <c-card-group>
+          <c-card class="p-4">
+            <c-card-body>
+              <form cForm #form="ngForm" [formGroup]="register" (ngSubmit)="onSubmit()">
+                <h1>Registrate</h1>
+                <p class="text-body-secondary">Registrate como usuario de la plataforma</p>
+                <!--Nombre-->
+                <c-input-group class="mb-3">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilUser"></svg>
+                  </span>
+                  <input cFormControl 
+                    autoComplete="nombre" 
+                    cFormControl 
+                    placeholder="Tu nombre" 
+                    type="nombre"
+                    formControlName="nombre" required
+                  />
+                </c-input-group>
+                <!--Email-->
+                <c-input-group class="mb-3">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilEnvelopeClosed"></svg>
+                  </span>
+                  <input cFormControl 
+                    autoComplete="email" 
+                    cFormControl 
+                    placeholder="Correo Electrónico" 
+                    type="email"
+                    formControlName="email" required
+                  />
+                </c-input-group>
+                <!--Contraseña-->
+                <c-input-group class="mb-4">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilLockLocked"></svg>
+                  </span>
+                  <input cFormControl 
+                    autoComplete="current-password"
+                    cFormControl
+                    placeholder="Contraseña"
+                    type="password"
+                    id="password"
+                    formControlName="password" required
+                  />
+                </c-input-group>
+                <div class="mb-4 text-sm" *ngIf="passwordFormField?.dirty">
+                  <span class="block text-danger" [ngClass]="{'none': passwordFormField?.value?.match('^(?=.*[A-Z])')}">
+                    Al menos debe incluir una mayúscula
+                  </span>
+                  <span class="block text-danger" [ngClass]="{'none': passwordFormField?.value?.match('(?=.*[a-z])')}">
+                    Al menos debe incluir una minúscula
+                  </span>
+                  <span class="block text-danger" [ngClass]="{'none': passwordFormField?.value?.match('(.*[0-9].*)')}">
+                    Al menos debe incluir un número
+                  </span>
+                  <span class="block text-danger" [ngClass]="{'none': passwordFormField?.value?.match('(?=.*[!@#$%^&*])')}">
+                    Al menos debe incluir un carácter especial
+                  </span>
+                  <span class="block text-danger" [ngClass]="{'none': passwordFormField?.value?.match('.{8,}')}">
+                    Debe tener un minimo de 8 caracteres
+                  </span>
+               </div>
+                <!--Repetir contraseña-->
+                <c-input-group class="mb-4">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilLockLocked"></svg>
+                  </span>
+                  <input cFormControl 
+                    autoComplete="passwordConfirmation"
+                    cFormControl
+                    placeholder="Confirmar contraseña"
+                    type="password"
+                    id="passwordConfirmation"
+                    formControlName="passwordConfirmation" required
+                  />
+                </c-input-group>
+                <div class="mb-4 text-sm" *ngIf="register.errors?.['PasswordNoMatch']">
+                  <span class="text-danger">Las contraseñas no coinciden</span>
+                </div>
+                <c-row>
+                  <c-col xs="6">
+                    <button cButton type="submit" [disabled]="register.invalid" class="px-4 text-white" color="success">
+                      Registrarse
+                    </button>
+                  </c-col>
+                  <c-col class="text-right" xs="6">
+                    <button cButton class="px-0" color="link" type="button" (click)="navigateToLogin($event)">
+                      ¿Ya eres usuario? Inicia sesión
+                    </button>
+                  </c-col>
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card>
+        </c-card-group>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

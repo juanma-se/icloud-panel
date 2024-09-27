@@ -1,0 +1,73 @@
+<div class="bg-light dark:bg-transparent d-flex flex-row align-items-center">
+    <c-container breakpoint="md">
+      <c-row class="justify-content-center">
+
+        <c-col lg="10" xl="8">
+          <c-card-group>
+            <c-card class="p-4">
+              <c-card-body>
+                <form cFormFloating #form="ngForm" [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                  <h1 class="mb-3">Crear Usuario</h1>
+
+                  <!--Nombre-->
+                  <c-input-group class="mb-3">
+                    <div [cFormFloating]="true">
+                      <input cFormControl id="name" placeholder="Nombre" type="text" formControlName="name" required />
+                      <label cLabel for="name">Nombre</label>
+                    </div>
+                    <div class="mb-4 text-sm" *ngIf="createForm.errors?.['nombre']">
+                      <span class="text-danger">El nombre es requerido</span>
+                    </div>
+                  </c-input-group>
+  
+                  <!--Email-->
+                  <c-input-group class="mb-3">
+                    <div [cFormFloating]="true">
+                      <input cFormControl id="email" placeholder="Email" type="email" formControlName="email" required />
+                      <label cLabel for="email">Email</label>
+                    </div>
+                    <div class="mb-4 text-sm" *ngIf="createForm.errors?.['email']">
+                      <span class="text-danger">El email es requerido</span>
+                    </div>
+                  </c-input-group>
+
+                  <!--Password-->
+                  <c-input-group class="mb-3">
+                    <div [cFormFloating]="true">
+                      <input cFormControl id="password" placeholder="Contraseña" type="text" formControlName="password" required />
+                      <label cLabel for="password">Contraseña</label>
+                    </div>
+                    <div class="mb-4 text-sm" *ngIf="createForm.errors?.['password']">
+                      <span class="text-danger">El campo contraseña es requerido</span>
+                    </div>
+                  </c-input-group>
+
+                  <!--Password confirmation-->
+                  <c-input-group class="mb-3">
+                    <div [cFormFloating]="true">
+                      <input cFormControl id="passwordConfirmation" placeholder="Repetir contraseña" type="text" formControlName="passwordConfirmation" required />
+                      <label cLabel for="passwordConfirmation">Repetir contraseña</label>
+                    </div>
+                    <div class="mb-4 text-sm" *ngIf="createForm.errors?.['passwordConfirmation']">
+                      <span class="text-danger">El campo repetir contraseña es requerido</span>
+                    </div>
+                  </c-input-group>
+  
+                  <!--Boton crear-->
+                  <c-row>
+                    <c-col xs="6">
+                      <button cButton type="submit" [disabled]="createForm.invalid" class="px-4 text-white" color="success">
+                        Crear usuario
+                      </button>
+                    </c-col>
+                  </c-row>
+  
+                </form>
+              </c-card-body>
+            </c-card>
+          </c-card-group>
+        </c-col>
+  
+      </c-row>
+    </c-container>
+  </div>
