@@ -1,43 +1,43 @@
 ## Quick Start
-- Clone the repo: `git clone https://github.com/juanma-se/icloud-panel.git`
+- Clonar el repo: `git clone https://github.com/juanma-se/icloud-panel.git`
 
-#### <i>Prerequisites</i>
-Before you begin, make sure your development environment includes `Node.js®` and an `npm` package manager.
+#### <i>Prerequisitos</i>
+Antes de comenzar en necesario verificar que nuestro entorno cumple los requisitos de `Node.js®` y `npm` package manager.
 
 ###### Node.js
-[**Angular 17**](https://angular.io/guide/what-is-angular) requires `Node.js` LTS version `^18.13` or `^20.09`.
+[**Angular 17**](https://angular.io/guide/what-is-angular) requiere `Node.js` LTS version `^18.13` or `^20.09`.
 
-- To check your version, run `node -v` in a terminal/console window.
-- To get `Node.js`, go to [nodejs.org](https://nodejs.org/).
+- comprobar la versión `node -v` en la terminal/consola.
+- Obtener `Node.js`, ir [nodejs.org](https://nodejs.org/).
 
 ###### Angular CLI
-Install the Angular CLI globally using a terminal/console window.
+Instalar `Angular CLI` de forma global desde la terminal/consola
 ```bash
 npm install -g @angular/cli
 ```
 
-### Installation
+### Instalación
 
 ``` bash
 $ npm install
 ```
 
-### Basic usage
+### Uso
 
-Configure APP 'api_base_url' in environment files located in src/environments folder according to the API base URL
+Configurar en los ficheros ubicados en src/environments la variable 'api_base_url' de acuerdo a lo configurado en la API base URL
 
 ``` bash
-# dev server with hot reload at http://localhost:4200
+# dev server con hot reload en http://localhost:4200
 $ npm run dev
 ```
 
-Navigate to [http://localhost:4200](http://localhost:4200). The app will automatically reload if you change any of the source files.
+Navegar a [http://localhost:4200](http://localhost:4200).
 
-#### Build
+Ingresar los datos de login creados en la API
 
-Run `build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Usuarios Generados
+- Usuario Administrador: administrador@example.com (contraseña: password) - Asignado al rol "Administrador".
+- Usuario Responsable: responsable@example.com (contraseña: password) - Asignado al rol "Responsable".
+- Usuario Asignado: asignado@example.com (contraseña: password) - Asignado al rol "Asignado".
 
-```bash
-# build for production with minification
-$ npm run build
-```
+
