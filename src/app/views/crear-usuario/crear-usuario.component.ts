@@ -1,4 +1,5 @@
 import {
+  AlertComponent,
   ButtonDirective,
   CardBodyComponent,
   CardComponent,
@@ -58,6 +59,7 @@ import { confirmPasswordValidator } from '@app/validators/confirm-password.valid
     FormControlDirective, 
     ButtonDirective, 
     NgStyle,
+    AlertComponent
   ]
 })
 export class CrearUsuarioComponent implements OnInit {
