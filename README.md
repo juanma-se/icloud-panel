@@ -1,5 +1,5 @@
 ## Quick Start
-- Clone the repo: `git clone https://github.com/coreui/coreui-free-angular-admin-template.git`
+- Clone the repo: `git clone https://github.com/juanma-se/icloud-panel.git`
 
 #### <i>Prerequisites</i>
 Before you begin, make sure your development environment includes `Node.js®` and an `npm` package manager.
